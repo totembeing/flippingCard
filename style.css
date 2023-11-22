@@ -8,6 +8,7 @@ body, html{
     height: 100%;
     background-color: #003049;
     position: relative;
+    perspective: 1000px;
 }
 
 .circle{
@@ -29,18 +30,129 @@ body, html{
     background-image: linear-gradient(280deg, #cdb4db 0%, #a2d2ff 35%, #03045e 100%);
 }
 
-.card{
+.secondContainer{
     position: relative;
     height: 18rem;
     width: 30rem;
     top: 14rem;
     left: 30rem;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    z-index: 100;
+}
+
+.secondContainer:hover{
+    transform: rotateY(180deg);
+}
+
+.card{
+    position: absolute;
+    height: 18rem;
+    width: 30rem;
     backdrop-filter: blur(15px);
     border-radius: 3rem;
     background: rgba(255, 255, 255, 0.4);
-    box-shadow: 10px 15px 10px rgb(255 255 255 / 0.2);
+    box-shadow: 5px 7.5px 10px rgb(255 255 255 / 0.2);
     display: flex;
     flex-direction: column;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
+
+.back-side{
+    display: flex;
+    transform: rotateY(180deg);
+}
+
+.helplineAndStrip{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.helpline{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.helpline > p {
+    font-size: 0.7rem;
+    margin-top: 1.3rem;
+}
+
+.blackStrip{
+    flex: 1;
+    background-color: black;
+}
+
+.cvvAndDescription{
+    flex: 1.7;
+    display: flex;
+    flex-direction: column;
+}
+
+.cvv{
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whiteStrip{
+    height: 50%;
+    width: 80%;
+    background-color: white;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.whiteStrip > p{
+    color: black;
+    margin-right: 0.5rem;
+}
+
+.coverStrip{
+    position: absolute;
+    left: 2rem;
+    height: 70%;
+    width: 75%;
+    border-radius: 0.5rem;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20%;
+    gap: 0.35rem;
+}
+
+.comp{
+    background-color: lightgray;
+    border-radius: 0.2rem;
+}
+
+.comp2, .comp3{
+    border-radius: 0px;
+}
+
+.description{
+    flex: 1.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description > p{
+    font-size: 0.7rem;
+    margin-left: 1.7rem;
+    margin-right: 1rem;
 }
 
 .top{
@@ -182,3 +294,4 @@ body, html{
     margin-top: 0;
     font-size: 1.2rem;
 }
+
